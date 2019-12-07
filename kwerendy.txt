@@ -1,0 +1,8 @@
+
+SELECT nazwisko, rok_urodzenia FROM matematycy WHERE rok_urodzenia < 1800
+_________________________________________________________________________
+SELECT id, imie, nazwisko FROM matematycy WHERE liczba_publikacji BETWEEN 5 AND 20
+_________________________________________________________________________
+SELECT MAX(liczba_publikacji) FROM matematycy WHERE rok_urodzenia < 1800
+_________________________________________________________________________
+DROP TABLE typy

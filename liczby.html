@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ciągi liczbowe</title>
+    <link type="text/css" rel="stylesheet" href="styl2.css">
+  </head>
+  <body>
+  <div id="baner">
+    <div id="b1">
+      <h2>Poznaj Ciągi Liczbowe</h2>
+    </div>
+    <div id="b2">
+      <h5><a href="liczby.html">Ciągi arytmetyczne</a></h5>
+    </div>
+    <div id="b3">
+      <h5><a href="fib.html">Ciąg Fibonacciego</a></h5>
+    </div>
+    <div id="b4">
+      <img src="obraz1.png" alt="Fibonacci">
+    </div>
+  </div>
+  <div id="glowny">
+    <div id="lewy">
+      <ol>
+        <li>ciągi arytmetyczne</li>
+        <li>ciągi geometryczne</li>
+        <li>ciągi Fibonacciego</li>
+      </ol>
+    </div>
+    <div id="prawy">
+      <h2>Generowanie ciągu arytmetycznego</h2>
+        <p>Pierwszy wyraz A1: <input type="number" name="a1" id="a1"></p> 
+          
+        <p>Różnica ciągu R: <input type="number" name="r" id="r"></p>
+          
+        <p>Liczba wyrazów w ciągu N: <input type="number" name="n" id="n"></p>
+           <br>
+        <button id="generuj" onclick="return generuj(event);">Generuj Ciąg</button>
+        <div id="wynik">Ciąg arytmetyczny zawiera wyrazy: </div>
+      </div>
+  </div>
+  <div id="stopka">
+    <p>Autor: 12345678910</p>
+  </div>
+  <script>
+    function checkNumber(n) {
+      if (n*1 || n*1===0) return true;
+      return false;
+    }
+    function generuj(e) {
+    
+      let a,b,c;
+      a=document.querySelector("#a1").value;
+      b=document.querySelector("#r").value;
+      c=document.querySelector("#n").value;
+
+      if(!checkNumber(a) ) return false;
+      if(!checkNumber(b) ) return false;
+      if(!checkNumber(c) ) return false;
+      
+      const w = document.querySelector("#wynik");
+      document.getElementById("wynik").style.display = "block";
+      for(i=1; i<=c; i++) {
+        ww = (a*1)+(i-1)*(b*1);
+          w.innerHTML+=ww
+          if(c!=i) w.innerHTML+=', ';
+      }
+    }
+  </script>
+  </body>
+</html>
